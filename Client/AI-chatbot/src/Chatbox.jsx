@@ -20,7 +20,7 @@ function Chatbox (){
         body: JSON.stringify({message: input})
     })
 
-    const data = await res.json();
+    const data = await res.json();         //it converts backend response to json 
 
     setMessages(m => [...m, {role: "Krishna", text: data.reply}])
    }

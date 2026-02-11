@@ -1,4 +1,4 @@
-import Chatbox  from "./Chatbox"
+import Chatbox from "./Chatbox"
 
 function App() {
   
