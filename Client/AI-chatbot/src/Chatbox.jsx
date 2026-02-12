@@ -1,5 +1,5 @@
 import { useState } from "react";
-import ollama from "ollama"
+
 
 function Chatbox (){
 
@@ -23,11 +23,28 @@ function Chatbox (){
     const data = await res.json();         //it converts backend response to json 
 
     setMessages(m => [...m, {role: "Krishna", text: data.reply}])
+    setInput("")
    }
 
 
   return (
-      <div className="bg-amber-500">Krishna</div>
+      <div className="p-20">
+         <h2>🕉️ Krishna AI</h2>
+
+         {
+            messages.map((m, i) => {
+                <p key={i}><b>{m.role}:</b> {m.text}</p>
+            })
+         }
+
+         <input  
+          type="text" 
+          value={input}
+          onChange={e => setInput(e.target.value)}
+          placeholder="Share you problem...."/>
+
+          <button onClick={send}>Ask</button>
+      </div>
   );
 }
 
