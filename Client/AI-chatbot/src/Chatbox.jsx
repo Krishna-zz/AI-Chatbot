@@ -33,7 +33,7 @@ function Chatbox (){
 
          {
             messages.map((m, i) => {
-                <p key={i}><b>{m.role}:</b> {m.text}</p>
+              return  <p key={i}><b>{m.role}:</b> {m.text}</p>
             })
          }
 
